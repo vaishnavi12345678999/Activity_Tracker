@@ -62,36 +62,88 @@ Activity Tracker is a powerful Chrome Extension designed to help users monitor t
 ![image](https://github.com/vaishnavi12345678999/Activity_Tracker/assets/120002519/8ebaaa95-61bb-41e1-baeb-48955025739b)
 ![image](https://github.com/vaishnavi12345678999/Activity_Tracker/assets/120002519/cf8d1d5a-f760-4e61-817e-a7361a459c01)
 
-
-
+-Logout functionality (Provuded as a button in Header is the user is logged in, clicking on which is redirected to the login page)
+![image](https://github.com/vaishnavi12345678999/Activity_Tracker/assets/120002519/c54600f1-ab17-40c1-9396-a5655a889917)
 
 ### Restricting Websites
-To restrict a website, navigate to the site, click the extension icon, and use the "Restrict this site" feature.
+-To restrict a website, navigate to the site, click the extension icon, and use the "Restrict this site" feature.
+![image](https://github.com/vaishnavi12345678999/Activity_Tracker/assets/120002519/b21d76c5-ea2b-4e80-a4b7-a5df38622cd0)
+-When the user clicks Restric this site, the hostname is sent to backend and then fetched at extension and then checked if teh active URL is in restricyted domains or not, If it contains it closes the current tab (![image](https://github.com/vaishnavi12345678999/Activity_Tracker/assets/120002519/11b2c7ac-9743-427a-9d59-bf5336d005d0))
+-The limting time is yet to be done but can be done in no time, just add an input at the extension for the active site, this sends the data to the backedn which is then fetched at the extension side. Here the extension checks for the active URL and its registered limit and closes it if reaches limit.
+
 
 ### Viewing Dashboard
 Access the dashboard by logging in through a web interface using the same credentials as the extension to view detailed activity reports and analytics.
+This is a snaphot of domain wise activity of a logged in user
+![image](https://github.com/vaishnavi12345678999/Activity_Tracker/assets/120002519/742fadea-f28c-4b96-9247-2486897828ce)
+This is page specific for a selected domain in seperate tabs
+![image](https://github.com/vaishnavi12345678999/Activity_Tracker/assets/120002519/40a4c9f9-4fd8-4eda-bcdb-2361606b7947)
+If user tries to toggle to a individual section the toast message will be displayed from toast container
+![image](https://github.com/vaishnavi12345678999/Activity_Tracker/assets/120002519/b27f3a63-47ec-405d-98c9-da7daaa2d8cd)
 
-## Screenshots
-Include screenshots here to show how the extension works.
+
 
 ## Database Schema
-Provide a detailed database schema to show how data is structured within your application.
 
-## Contributions
-Instructions for how others can contribute to the project. Include guidelines for code style, branches, commits, pull requests, etc.
+### Users
+| Column          | Type   | Description                   |
+|-----------------|--------|-------------------------------|
+| `id`            | integer| Primary key, auto-incremented |
+| `email`         | string | User's email address          |
+| `password_digest`| string | Hashed password for security  |
+| `created_at`    | datetime| Record creation timestamp     |
+| `updated_at`    | datetime| Record update timestamp       |
 
-## License
-State the license under which this extension is released, typically found at the bottom of the README.
+- Indexes:
+  - `email` (unique)
 
+### Activities
+| Column          | Type    | Description                         |
+|-----------------|---------|-------------------------------------|
+| `id`            | integer | Primary key, auto-incremented       |
+| `user_id`       | integer | Foreign key to users table          |
+| `hostname`      | string  | Hostname of the visited website     |
+| `url`           | string  | URL of the page                     |
+| `time_spent`    | integer | Time spent on the page in seconds   |
+| `date`          | date    | Date of the activity                |
+| `created_at`    | datetime| Record creation timestamp           |
+| `updated_at`    | datetime| Record update timestamp             |
+
+- Indexes:
+  - `user_id`
+  - Composite `user_id, url, date` (unique)
+
+### Restricted Sites
+| Column          | Type    | Description                   |
+|-----------------|---------|-------------------------------|
+| `id`            | integer | Primary key, auto-incremented |
+| `user_id`       | integer | Foreign key to users table    |
+| `hostname`      | string  | Hostname of the restricted site |
+| `created_at`    | datetime| Record creation timestamp     |
+| `updated_at`    | datetime| Record update timestamp       |
+
+- Indexes:
+  - Composite `user_id, hostname` (unique)
+
+##APIs
+- [x] Login -> returns a JWT encoded 
+- [ ] Signup -> creates a 
+- [x] Logout
+- [x] Periodic Activity storing
 ## Additional Features
-List any additional features that you plan to implement in the future.
+
 
 ## Value Proposition
 Describe the value this project brings to its users and potentially to society, focusing on productivity enhancements and data privacy.
 
 ## Checklist
 - [x] User Registration and Login
+- [x] Logout
 - [x] Activity Tracking
 - [x] Website Restriction
 - [x] Time Restrictions
 - [x] Personalized Dashboard
+- [x] Domain specific time activity
+- [x] Individual page specific time activity
+- [x] Domain specific and Individual Page graph toggle
+- [x] Toast for warnings, user experiences
