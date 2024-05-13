@@ -43,7 +43,7 @@ Activity Tracker is a powerful Chrome Extension designed to help users monitor t
 10. Open tracker directory in cloned repo and run gem install (prerequisites: ruby latest version, rails latest version, mysql2, and create a database tracker and spin it up for connection with user name and password (change in databse.yml at your_new_password))
 11. Then run gem install.
 12. Now we have extension, front end, and backend installed.
-13. In file application_controller please refer the comment for creating a secret key. It is present in tracker folder (![image](https://github.com/vaishnavi12345678999/Activity_Tracker/assets/120002519/1fb6274f-6541-477f-a13f-c899b985cc49))
+13. In file application_controller please refer the comment for creating a secret key. It is present in tracker folder (secret_key_generator.rb) (![image](https://github.com/vaishnavi12345678999/Activity_Tracker/assets/120002519/1fb6274f-6541-477f-a13f-c899b985cc49))
 ## Usage
 
 ### Login
