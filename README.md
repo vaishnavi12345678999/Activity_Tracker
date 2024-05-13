@@ -127,14 +127,50 @@ If user tries to toggle to a individual section the toast message will be displa
 
 ##APIs
 - [x] Login -> returns a JWT encoded 
-- [ ] Signup -> creates a 
-- [x] Logout
-- [x] Periodic Activity storing
-## Additional Features
+- [x] Signup -> creates a user with correct details with hashed password
+- [x] Periodic Activity storing (every 5 seconds) -> (**If** the domain in the particular day is present for that user **then** increment it **else** create new record)
+- [x] Fetching Activity to the dashboard
+- [x] Storing the Restricted domains in the database API
+- [x] Fetching the restricted domains for the logged in user.
+- [x] Time storage for the restricted domains
+- [x] fetching for the restricted domains
 
+##Some honorable mentions of architechture decisions:
+- [x] Using JWT for secure API authentication
+- [x] Storing the Token in localstorage for temporary purposes (But time permitted created an encrypted cookie in the brower is a good option)
+- [x] Periodical Activity Storage at the backend side for real-time updates
+- [x] Storing the activity with an innovative strategy, instead of storing every record, stored daywise in the database for better user experience and for front end to use to showcase daywise activity
+
+## Additional Features
+- [ ] Categorizing domains
+- [ ] Motivation lines for users using Chat GPT Open AI Model and prompt engineering for creative motivation with which we can show the users.
+- [ ] Dockerize the front end, backend and the database image with the backup for containerised application. For scalable, resilient application which can be accessed from anywhere.
 
 ## Value Proposition
-Describe the value this project brings to its users and potentially to society, focusing on productivity enhancements and data privacy.
+The "Activity Tracker" Chrome extension offers several valuable propositions to users, which can broadly enhance productivity, digital well-being, and data-driven decision-making. Here’s a breakdown of the key values this application brings to society:
+
+### Enhance Productivity
+- **Time Management:** By tracking time spent on various websites, users can gain insights into their browsing habits, helping them identify and reduce time-wasting activities. This promotes more focused and efficient work habits.
+- **Activity Awareness:** Users become more aware of their digital presence. Awareness is the first step toward behavior change, especially for users looking to optimize their online activities.
+
+### Improve Digital Well-being
+- **Reduced Digital Distraction:** The feature to restrict access to non-productive or distracting websites helps users avoid temptation and stay focused on productive tasks.
+- **Customizable Restrictions:** Users can set time limits on specific websites, which helps in maintaining a healthy balance between work and leisure activities online.
+
+### Data-Driven Insights
+- **Detailed Analytics:** The dashboard provides visual analytics on web activity, which can be used to spot trends, track productivity improvements, and make informed decisions about how one spends their time online.
+- **Personalization:** By categorizing websites into groups like "productive," "entertaining," etc., users can tailor their web experience to better align with personal or professional goals.
+
+### Social Responsibility
+- **Promoting Responsible Usage:** Encouraging users to be mindful of their browsing habits can lead to more responsible internet use, potentially reducing exposure to harmful content.
+- **Supporting Mental Health:** By limiting overexposure to potentially addictive sites and encouraging breaks, the tool can help in reducing anxiety and stress associated with excessive internet use.
+
+### Security and Privacy
+- **Data Privacy:** With strong authentication measures and secure data handling practices, users can trust that their browsing data is private and well-protected.
+- **User Empowerment:** Users control their data and are empowered to make changes to their settings and restrictions based on their personal preferences.
+
+By integrating these features into daily life, the "Activity Tracker" aims to empower users to make more informed decisions about their digital habits, contributing to a healthier digital society. This tool is not just about tracking and limiting but about understanding and optimizing how digital platforms are used, which in turn can boost overall productivity and well-being.
+
 
 ## Checklist
 - [x] User Registration and Login
