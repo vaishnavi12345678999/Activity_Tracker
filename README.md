@@ -51,6 +51,18 @@ Activity Tracker is a powerful Chrome Extension designed to help users monitor t
 
 -The Login is necessary for activity to be tracked.
 -If the User does not have the login, Sign up which will redirect to the front end app.
+![image](https://github.com/vaishnavi12345678999/Activity_Tracker/assets/120002519/d46f6617-be8b-4d4f-b824-4da02979c46c)
+-Signup if no account
+![image](https://github.com/vaishnavi12345678999/Activity_Tracker/assets/120002519/1a51c66d-fc3e-4e38-ab2c-f31347e2ed59)
+-Some validations for Signuppage
+![image](https://github.com/vaishnavi12345678999/Activity_Tracker/assets/120002519/573d2141-e7fd-41c5-83b5-d7ebdc4047a3)
+![image](https://github.com/vaishnavi12345678999/Activity_Tracker/assets/120002519/2e8171a4-f74d-43be-acdd-5de7fb9a6a2d)
+
+-Validations for Loginpage
+![image](https://github.com/vaishnavi12345678999/Activity_Tracker/assets/120002519/8ebaaa95-61bb-41e1-baeb-48955025739b)
+![image](https://github.com/vaishnavi12345678999/Activity_Tracker/assets/120002519/cf8d1d5a-f760-4e61-817e-a7361a459c01)
+
+
 
 
 ### Restricting Websites
